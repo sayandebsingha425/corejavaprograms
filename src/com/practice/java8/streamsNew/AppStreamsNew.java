@@ -77,6 +77,8 @@ System.out.println("The list: "+asList6+" after converting all the strings into 
 int factorial = IntStream.rangeClosed(1, 5).reduce(1,(a,b)->a*b);
 System.out.println("Factorial of 5 is: "+factorial);
 
-//12.
+//12. Filter Even Numbers from list
+
+
     }
 }
