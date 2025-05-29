@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class AppStreamsNew {
     public static void main(String[] args) {
@@ -57,5 +58,25 @@ List<Integer> asList1 = Arrays.asList(1,2,3,4,5,6);
 Integer sum = asList1.stream().reduce(0,(a,b)->a+b);
 System.out.println("sum of integers is: "+sum);
 
+//8. check if an element present in a list or not
+List<Integer> asList4 = Arrays.asList(1,2,3,4,5,6);
+boolean anyMatch = asList4.stream().anyMatch(i->i==2);
+System.out.println("The list : " + asList4 +" contains 2: "+anyMatch);
+
+//9. Concatinating list of strings
+List<String> asList5 = Arrays.asList("Hello", " ", "World", "!");
+String collect2 = asList5.stream().collect(Collectors.joining());
+System.out.println("List of strings: "+asList5+" after joining is: "+collect2);
+
+//10.Convert all Strings to upper case
+List<String> asList6 = Arrays.asList("apple", "banana", "cherry");
+List<String> collect3 = asList6.stream().map(str-> str.toUpperCase()).collect(Collectors.toList());
+System.out.println("The list: "+asList6+" after converting all the strings into uppercase is: "+collect3);
+
+//11.Factorial of a number
+int factorial = IntStream.rangeClosed(1, 5).reduce(1,(a,b)->a*b);
+System.out.println("Factorial of 5 is: "+factorial);
+
+//12.
     }
 }
